@@ -34,12 +34,10 @@ var menu = [1, 2, 3, 4, 5];
     var seleccioClient = [];
     var sortida = 0;
     while(quantsPlats != sortida){
-        seleccioClient[sortida] = prompt("Intodueix el numero del plat escollit:");
-        document.getElementById("seleccio").innerHTML = "Has seleccionat el plat: "+ seleccioClient[sortida];
+        seleccioPlat = prompt("Intodueix el numero del plat escollit:");
+        seleccioClient.push(seleccioPlat);
         sortida++
     }
-
-     console.log(lecciseoClient[0] + " i " + seleccioClient[1]);
-
+    document.getElementById("seleccioText").innerHTML += "Has seleccionat el plat: "+ seleccioClient;
 } 
 
