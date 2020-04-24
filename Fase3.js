@@ -38,12 +38,39 @@ var menu = [1, 2, 3, 4, 5];
     while(quantsPlats != sortida){
         seleccioPlat = prompt("Intodueix el numero del plat escollit:");
         seleccioClient.push(seleccioPlat);
-        document.getElementById("seleccioText").innerHTML += "<br>Has seleccionat el plat: "+ seleccioClient[sortida]+ "<br>";
         sortida++
     }
-    
+    document.getElementById("seleccioText").innerHTML += "Has seleccionat el plat: "+ seleccioClient;
 
-    
+    for(i=0; i<quantsPlats; i++){
+        switch(seleccioClient[i]){
+            case "1": 
+                document.getElementById("comanda").innerHTML+= "Has demanat " + plat1 + " El preu es de " + preu1 + "€";
+                totalMenjar+=preu1
+                break;
+            case "2": 
+                document.getElementById("comanda").innerHTML+= "Has demanat " + plat2 + " El preu es de " + preu2 + "€";
+                totalMenjar+=preu2
+                break;    
+            case "3": 
+                document.getElementById("comanda").innerHTML+= "Has demanat " + plat3 + " El preu es de " + preu3 + "€";
+                totalMenjar+=preu3
+                break;    
+            case "4": 
+                document.getElementById("comanda").innerHTML+= "Has demanat " + plat4 + " El preu es de " + preu4 + "€";
+                totalMenjar+=preu4
+                break;
+            case "5": 
+                document.getElementById("comanda").innerHTML+= "Has demanat " + plat5 + " El preu es de " + preu5 + "€";
+                totalMenjar+=preu5;
+                break;
+            default:
+                document.getElementById("comanda").innerHTML+= "Aquest producte que has demanat no existeix";
+                break;
+        }
+    }
+
+    document.getElementById("totalComanda").innerHTML = "El import total a pagar es: " + totalMenjar;
     
 } 
 
