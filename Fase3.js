@@ -1,7 +1,6 @@
 
 function introdueixPlats(){
-var bitllets = [500, 200, 100, 50, 20, 10, 5];
-var totalMenjar;
+
 var menu = [1, 2, 3, 4, 5];
      
 
@@ -42,35 +41,56 @@ var menu = [1, 2, 3, 4, 5];
     }
     document.getElementById("seleccioText").innerHTML += "Has seleccionat el plat: "+ seleccioClient;
 
+    var totalMenjar = 0;
+
     for(i=0; i<quantsPlats; i++){
         switch(seleccioClient[i]){
             case "1": 
-                document.getElementById("comanda").innerHTML+= "Has demanat " + plat1 + " El preu es de " + preu1 + "€";
-                totalMenjar+=preu1
+                document.getElementById("comanda").innerHTML+= "<br>Has demanat " + plat1 + ", el preu del plat es de" + preu1 + "€<br>";
+                totalMenjar=totalMenjar + preu1;
                 break;
             case "2": 
-                document.getElementById("comanda").innerHTML+= "Has demanat " + plat2 + " El preu es de " + preu2 + "€";
-                totalMenjar+=preu2
+                document.getElementById("comanda").innerHTML+= "<br>Has demanat " + plat2 + ", el preu del plat es de " + preu2 + "€<br>";
+                totalMenjar+=preu2;
                 break;    
             case "3": 
-                document.getElementById("comanda").innerHTML+= "Has demanat " + plat3 + " El preu es de " + preu3 + "€";
-                totalMenjar+=preu3
+                document.getElementById("comanda").innerHTML+= "<br>Has demanat " + plat3 + ", el preu del plat es de " + preu3 + "€<br>";
+                totalMenjar+=preu3;
                 break;    
             case "4": 
-                document.getElementById("comanda").innerHTML+= "Has demanat " + plat4 + " El preu es de " + preu4 + "€";
-                totalMenjar+=preu4
+                document.getElementById("comanda").innerHTML+= "<br>Has demanat " + plat4 + ", el preu del plat es de " + preu4 + "€<br>";
+                totalMenjar+preu4;
                 break;
             case "5": 
-                document.getElementById("comanda").innerHTML+= "Has demanat " + plat5 + " El preu es de " + preu5 + "€";
-                totalMenjar+=preu5;
+                document.getElementById("comanda").innerHTML+= "<br>Has demanat " + plat5 + ", el preu del plat es de " + preu5 + "€<br>";
+                totalMenjar+preu5;
                 break;
             default:
-                document.getElementById("comanda").innerHTML+= "Aquest producte que has demanat no existeix";
+                document.getElementById("comanda").innerHTML+= "<br>Aquest producte que has demanat no existeix<br>";
                 break;
         }
     }
 
     document.getElementById("totalComanda").innerHTML = "El import total a pagar es: " + totalMenjar;
+
+
+
+    var bitllets = [500, 200.00, 100.00, 50.00, 20.00, 5.00];
+    var resto; 
+
+
+    for(h=0; h<bitllets.length; h++){
+        resto = totalMenjar / bitllets[h];
+        if(resto<=0){
+            aux++
+        }else if(resto>=1){
+            document.getElementById("bitllets").innerHTML+= "<br>Per aquest import seria raonable utilitzar bitllets de  " + bitllets[h]+"<br>";
+        }else if(resto>=2){
+            document.getElementById("bitllets").innerHTML+= "<br>Per aquest import Seria raonable utilitzar bitllets de  " + bitllets[h]+"<br>";
+        }
+        
+    }
+
     
 } 
 
